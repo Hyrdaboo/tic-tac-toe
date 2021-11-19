@@ -13,8 +13,10 @@ public class gameManager : MonoBehaviour
 
     public Scene scene;
 
+
     private void Awake()
     {
+        
         scene = SceneManager.GetActiveScene();
     }
 
@@ -116,7 +118,11 @@ public class gameManager : MonoBehaviour
        if (winner == "x") info.text = "You Win!";
        if (winner == "o") info.text = "You Lose!";
 
-       if (winner == null && checkLastMove()) info.text = "Tie!";
+       if (winner == null && checkLastMove())
+        {
+            info.text = "Tie!";
+            info2.text = "Press 'R' to replay";
+        }
 
         if (winner != null) info2.text = "Press 'R' to replay";
 
